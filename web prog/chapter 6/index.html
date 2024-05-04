@@ -1,0 +1,88 @@
+<html>
+<head>
+	<title>Petrol Calculator</title>
+		<style>
+			body{
+			border: 1px solid black;
+			width: 550px;
+			height: 550px;
+			margin: auto;
+			margin-top: 40px;
+			font-family: verdana;
+			border-radius: 10px;
+			padding: 10px;
+			padding-top: 20px;
+		}
+		h1{
+			margin: 20px 0px 0px 120px;
+		}
+		div{
+			margin-top: 100px;
+		}
+		h2{
+			font-size: 20px;
+			margin: 50px 0px 0px 30px;
+		}
+		input{
+			width: 60%;
+			height: 40px;
+			margin-left: 20px;
+			padding-left: 10px;
+			font-size: 15px;
+		}
+		input:focus{
+			background-color: #99ccff;
+		}
+		#liters{
+			margin-left: 108px;
+		}
+		button{
+			font-size: 20px;
+			width: 89%;
+			height: 40px;
+			margin: 50px 0px 0px 30px;
+			border-radius: 5px;
+			background-color: #4CAF50;
+			cursor: pointer;
+			color: #ffffff;
+			font-weight: bold;
+		}
+		button:hover{
+			transform: scale(1.01);
+		}
+		p{
+			font-size: 20px;
+			margin: 70px 0px 0px 46%;
+		}
+		</style>
+		<script>
+			var result;
+			
+			function calculate(x,y){
+				//default value of the cost of the petrol per liter
+				x = 1.72;
+				//variable to get the value that user inputted
+				y =document.getElementById("liters").value;
+				//formula to compute the total cost-->
+				result = document.getElementById("total").value = x * y;
+				//display the output in p tag
+				document.getElementById("total").innerHTML =  "Total: $" + result;
+			}
+			
+		</script>
+
+	</head>
+	<body>
+		
+		<h1>Petrol Calculator</h1>
+		<div>
+			<!--Input for the cost of Petrol per liter-->
+			<h2>Cost of Petrol <input type="number" id="cost" placeholder="00.00" value="1.72" required /></h2>
+			<!--Input for the liters-->
+			<h2>Liters <input type="number" id="liters" placeholder="00.00" required /></h2>
+		</div>
+		<!--button to calculate the total cost-->
+		<button onClick="calculate()" id="result" >Calculate</button>
+		<p id="total"></p>
+	</body>
+</html>
